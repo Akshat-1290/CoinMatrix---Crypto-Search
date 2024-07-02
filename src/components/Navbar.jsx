@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ export const Navbar = () => {
           {menuLink.map((item) => {
             return (
               <li className="text-xl font-bold hover-gradient" key={item.link}>
-                <a href={item.link}>{item.text}</a>
+                <Link to={item.link}>{item.text}</Link>
               </li>
             );
           })}
@@ -40,7 +41,7 @@ export const Navbar = () => {
           {menuLink.map((item) => {
             return (
               <li className="text-3xl font-bold" key={item.link}>
-                <a href={item.link}>{item.text}</a>
+                <Link to={item.link}>{item.text}</Link>
               </li>
             );
           })}
