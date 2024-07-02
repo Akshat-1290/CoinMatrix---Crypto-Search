@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .hover-gradient {
+        @apply hover:bg-gradient-purple hover:bg-clip-text hover:text-transparent hover:transition-all hover:duration-500
+    }
+  }
