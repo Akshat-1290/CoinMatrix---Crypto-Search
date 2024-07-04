@@ -19,7 +19,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className="text-white font-space flex justify-between p-5 xl:py-10 xl:px-24 fixed w-screen top-0">
-        <p className="title text-3xl uppercase font-bold cursor-pointer">CoinMatrix</p>
+        <Link to={"/"} className="title text-3xl uppercase font-bold cursor-pointer">CoinMatrix</Link>
         <ul className="desktop-menu hidden md:flex gap-5">
           {menuLink.map((item) => {
             return (
