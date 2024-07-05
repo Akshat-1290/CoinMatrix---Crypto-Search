@@ -9,7 +9,6 @@ function App() {
   const [pagination, setPagination] = useState(1);
 
   useEffect(() => {
-    console.log("fething");
     setLoading(true);
     fetchCoinsData(10, pagination).then((value) => {
       setData(value);

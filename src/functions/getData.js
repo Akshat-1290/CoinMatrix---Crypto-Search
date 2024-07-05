@@ -9,6 +9,7 @@ export const fetchCoinsData = async (perpage , page) => {
         const data = await response.json();
         return data;
       } catch (error) {
+        alert("Api Limit Has Been Exhausted. Please Come A Minute Later.")
         console.log(error);
       }
   }
