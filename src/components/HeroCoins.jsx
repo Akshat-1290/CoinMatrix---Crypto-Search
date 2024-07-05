@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CoinsContext } from "../context/AppContext";
-
+import { floatConverter, formatPercentage } from "../functions/HeroFunctions";
 export const HeroCoins = () => {
   const { data, loading } = useContext(CoinsContext);
   const limitedCoins = data ? data.slice(0, 4) : null;
@@ -20,11 +20,11 @@ export const HeroCoins = () => {
                 <div className="text-xl">
                   <span>{item.name}</span>{" "}
                   <span className="text-red-600">
-                    {item.price_change_percentage_24h}%
+                    {formatPercentage(item.price_change_percentage_24h)}
                   </span>
                 </div>
                 <span className="text-2xl tracking-wider">
-                  ${item.current_price}
+                  ${floatConverter(item.current_price)}
                 </span>
               </Link>
             );
