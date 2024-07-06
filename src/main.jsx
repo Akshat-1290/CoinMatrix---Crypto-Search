@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home.jsx";
 import { Coins } from "./pages/Coins.jsx";
+import { NotFound } from "./pages/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path : "*",
+    element : <NotFound/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
