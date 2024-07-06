@@ -10,11 +10,12 @@ function App() {
 
   useEffect(() => {
     fetchCoinsData(10, pagination).then((value) => {
-      setData(value);
-      setLoading(false);
+      if (value) {
+        setData(value);
+        setLoading(false);
+      }
     });
   }, [pagination]);
-
 
   return (
     <>
