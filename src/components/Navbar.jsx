@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useRef, useState , useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null)
 
   const menuLink = [
     { text: "Home", link: "#home" },
@@ -16,9 +17,27 @@ export const Navbar = () => {
     document.body.classList.toggle("overflow-hidden");
   };
 
+  const scrollAnimation = () => {
+    const nav = navRef.current;
+    if (nav) {
+      if (window.scrollY >= 150) {
+        nav.classList.add("!fixed", "bg-[#0f051d]");
+      } else {
+        nav.classList.remove("!fixed", "bg-[#0f051d]");
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollAnimation);
+    return () => {
+      window.removeEventListener("scroll", scrollAnimation);
+    };
+  }, []);
+
   return (
     <>
-      <nav className="text-white font-space flex justify-between p-5 xl:py-10 xl:px-24 fixed w-screen top-0">
+      <nav className="text-white font-space flex justify-between p-5 xl:py-10 xl:px-24 absolute w-screen top-0 right-0 z-20" ref={navRef}>
         <Link to={"/"} className="title text-3xl uppercase font-bold cursor-pointer">CoinMatrix</Link>
         <ul className="desktop-menu hidden md:flex gap-5">
           {menuLink.map((item) => {
