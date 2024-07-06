@@ -9,22 +9,18 @@ function App() {
   const [pagination, setPagination] = useState(1);
 
   useEffect(() => {
-    setLoading(true);
     fetchCoinsData(10, pagination).then((value) => {
       setData(value);
       setLoading(false);
     });
   }, [pagination]);
 
-  const updatePagination = (action) => {
-    action === "next" ? setPagination(pagination + 1) : setPagination(pagination - 1);
-  };
 
   return (
     <>
       <Navbar />
       <main>
-        <CoinsContext.Provider value={{ data, updatePagination, loading }}>
+        <CoinsContext.Provider value={{ data, setPagination, loading }}>
           <Outlet />
         </CoinsContext.Provider>
       </main>

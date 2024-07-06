@@ -7,9 +7,10 @@ import {
   numberWithCommas,
 } from "../functions/HeroFunctions";
 import { Loader } from "./Loader";
+import { Pagination } from "./Pagination";
 
 export const Market = () => {
-  const { data, updatePagination, loading } = useContext(CoinsContext);
+  const { data, loading } = useContext(CoinsContext);
   return (
     <>
       <section
@@ -55,6 +56,8 @@ export const Market = () => {
                   </Link>
                 );
               })}
+              <Pagination/>
+              {/* {!loading && <Pagination/>} */}
           </div>
         </section>
       </section>
