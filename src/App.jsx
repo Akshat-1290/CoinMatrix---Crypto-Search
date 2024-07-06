@@ -9,12 +9,14 @@ function App() {
   const [pagination, setPagination] = useState(1);
 
   useEffect(() => {
-    fetchCoinsData(10, pagination).then((value) => {
-      if (value) {
-        setData(value);
-        setLoading(false);
-      }
-    });
+    if (window.location.pathname === "/") {
+      fetchCoinsData(10, pagination).then((value) => {
+        if (value) {
+          setData(value);
+          setLoading(false);
+        }
+      });
+    }
   }, [pagination]);
 
   return (

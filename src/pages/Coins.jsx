@@ -11,15 +11,13 @@ export const Coins = () => {
   const { coinid } = useParams();
 
   useEffect(() => {
-    fetchCoin(coinid)
-      .then((value) => {
-        if(value){
-          setCoinData(value);
-          setLoading(false);
-        }
-      })
+    fetchCoin(coinid).then((value) => {
+      if (value) {
+        setCoinData(value);
+        setLoading(false);
+      }
+    });
   }, [coinid]);
-  console.log(coinData);
   return (
     <>
       <section
@@ -51,21 +49,22 @@ export const Coins = () => {
                 )}
               </span>
               <span className="text-xl">
-                Price : ${floatConverter(coinData.market_data.current_price.usd)}
+                Price : $
+                {floatConverter(coinData.market_data.current_price.usd)}
               </span>
               <span className="text-xl">Symbol : {coinData.symbol}</span>
-              <div className="mt-5 text-center">
-                    <p
-                      className="px-7 overflow-y-auto h-[30rem] text-xl lg:h-[21.5rem]"
-                      dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(
-                          coinData.description.en.length > 10
-                            ? coinData.description.en
-                            : "Description Not Available"
-                        ),
-                      }}
-                    ></p>
-                  </div>
+            </div>
+            <div className="mt-5 text-center">
+              <p
+                className="px-7 overflow-y-auto h-[30rem] text-xl lg:h-[21.5rem]"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(
+                    coinData.description.en.length > 10
+                      ? coinData.description.en
+                      : "Description Not Available"
+                  ),
+                }}
+              ></p>
             </div>
           </>
         )}
