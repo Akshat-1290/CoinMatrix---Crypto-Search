@@ -9,8 +9,7 @@ const fetchData = async (api) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    alert("Error Occured");
-    console.log(error);
+   return null
   }
 };
 

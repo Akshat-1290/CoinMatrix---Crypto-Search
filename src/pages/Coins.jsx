@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { fetchCoin } from "../functions/getData";
 import { Loader } from "../components/Loader";
 import { floatConverter, formatPercentage } from "../functions/HeroFunctions";
 import DOMPurify from "dompurify";
 
 export const Coins = () => {
+  const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
   const [coinData, setCoinData] = useState([]);
   const { coinid } = useParams();
@@ -15,8 +16,12 @@ export const Coins = () => {
       if (value) {
         setCoinData(value);
         setLoading(false);
+      }else{
+        navigate("/notfound")
       }
-    });
+    }).catch((error) => {
+      console.log(error);
+    })
   }, [coinid]);
   return (
     <>

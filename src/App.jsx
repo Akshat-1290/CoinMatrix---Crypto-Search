@@ -15,6 +15,11 @@ function App() {
           setData(value);
           setLoading(false);
         }
+        else{
+          alert("Error Fetching Data")
+        }
+      }).catch((error) => {
+        console.log(error);
       });
     }
   }, [pagination , Location]);
