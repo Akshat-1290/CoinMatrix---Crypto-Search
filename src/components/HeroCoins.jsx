@@ -15,7 +15,7 @@ export const HeroCoins = () => {
             return (
               <Link
                 key={item.id}
-                to={`/coin/${item.name.toLowerCase()}`}
+                to={`/coin/${item.name}`}
                 className="flex flex-col justify-center items-center gap-2"
               >
                 <img className="h-24" src={item.image} alt={item.id} />
