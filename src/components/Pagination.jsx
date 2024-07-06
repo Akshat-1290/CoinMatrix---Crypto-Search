@@ -36,7 +36,7 @@ export const Pagination = () => {
 
   return (
     <>
-      <div className="pagination-buttons flex gap-4 justify-center mt-10">
+      <div className="pagination-buttons flex gap-4 justify-center mt-10 font-space">
         {paginationButtons}
       </div>
     </>

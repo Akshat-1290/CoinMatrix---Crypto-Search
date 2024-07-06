@@ -7,7 +7,6 @@ import {
   numberWithCommas,
 } from "../functions/HeroFunctions";
 import { Loader } from "./Loader";
-import { Pagination } from "./Pagination";
 
 export const Market = () => {
   const { data, loading } = useContext(CoinsContext);
@@ -26,7 +25,7 @@ export const Market = () => {
             <p className="w-36">Market Cap</p>
           </div>
           <div className="table-data w-fit xl:w-[78rem]">
-            {loading && <Loader/>}
+            {loading && <Loader />}
             {!loading &&
               data.map((item) => {
                 return (
@@ -56,8 +55,6 @@ export const Market = () => {
                   </Link>
                 );
               })}
-              <Pagination/>
-              {/* {!loading && <Pagination/>} */}
           </div>
         </section>
       </section>
