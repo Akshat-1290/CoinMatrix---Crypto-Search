@@ -16,8 +16,8 @@ function App() {
     });
   }, [pagination]);
 
-  const updatePagination = () => {
-    setPagination(pagination + 1);
+  const updatePagination = (action) => {
+    action === "next" ? setPagination(pagination + 1) : setPagination(pagination - 1);
   };
 
   return (

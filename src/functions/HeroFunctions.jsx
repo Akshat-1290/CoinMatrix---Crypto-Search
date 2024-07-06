@@ -15,7 +15,7 @@ export const floatConverter = (num)=>{
     } else {
       return (
         <span className={`text-xl text-emerald-500`}>
-          {num.toFixed(2)} %
+          +{num.toFixed(2)} %
         </span>
       );
     }
