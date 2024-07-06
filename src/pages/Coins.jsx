@@ -22,7 +22,7 @@ export const Coins = () => {
     }).catch((error) => {
       console.log(error);
     })
-  }, [coinid]);
+  }, [coinid , navigate]);
   return (
     <>
       <section

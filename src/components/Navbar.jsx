@@ -69,8 +69,8 @@ export const Navbar = () => {
           })}
         </ul>
         <div className="desktop-nav-icons hidden md:block text-2xl space-x-4 ml-16">
-          <i className="fa-brands fa-twitter cursor-pointer hover-gradient"></i>
-          <i className="fa-brands fa-discord cursor-pointer hover-gradient"></i>
+          <Link className="fa-brands fa-linkedin cursor-pointer hover-gradient"></Link>
+          <Link to="https://github.com/Akshat-1290" target="_blank" className="fa-brands fa-github cursor-pointer hover-gradient"></Link>
         </div>
         <ul
           className={`mobile-menu bg-white text-black w-screen absolute top-0 ${
