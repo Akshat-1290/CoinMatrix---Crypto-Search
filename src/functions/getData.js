@@ -1,6 +1,7 @@
 export const fetchCoinsData = async (perpage , page) => {
-    const api = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${perpage}&page=${page}&sparkline=false`
-    try {
+  const api = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${perpage}&page=${page}&sparkline=false`
+  try {
+      console.log("Fetching Data");
         const response = await fetch(api);
         if (!response.ok) {
           console.log(response);

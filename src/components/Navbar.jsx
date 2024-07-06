@@ -1,12 +1,12 @@
-import { useRef, useState , useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navRef = useRef(null)
+  const navRef = useRef(null);
 
   const menuLink = [
-    { text: "Home", link: "#home" },
+    { text: "Hero", link: "#hero" },
     { text: "Market", link: "#market" },
     { text: "Choose Us", link: "#choose-us" },
     { text: "Join", link: "#join" },
@@ -35,15 +35,35 @@ export const Navbar = () => {
     };
   }, []);
 
+  const scrollTo = (component) => {
+    const Component = document.querySelector(component);
+    window.scrollTo({
+      top: Component.offsetTop - 100,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
-      <nav className="text-white font-space flex justify-between p-5 xl:py-10 xl:px-24 absolute w-screen top-0 right-0 z-20" ref={navRef}>
-        <Link to={"/"} className="title text-3xl uppercase font-bold cursor-pointer">CoinMatrix</Link>
+      <nav
+        className="text-white font-space flex justify-between p-5 xl:py-10 xl:px-24 absolute w-screen top-0 right-0 z-20"
+        ref={navRef}
+      >
+        <Link
+          to={"/"}
+          className="title text-3xl uppercase font-bold cursor-pointer"
+        >
+          CoinMatrix
+        </Link>
         <ul className="desktop-menu hidden md:flex gap-5">
           {menuLink.map((item) => {
             return (
-              <li className="text-xl font-bold hover-gradient" key={item.link}>
-                <Link to={item.link}>{item.text}</Link>
+              <li
+                className="text-xl font-bold hover-gradient cursor-pointer"
+                key={item.link}
+                onClick={() => scrollTo(item.link)}
+              >
+                {item.text}
               </li>
             );
           })}
@@ -59,8 +79,15 @@ export const Navbar = () => {
         >
           {menuLink.map((item) => {
             return (
-              <li className="text-3xl font-bold" key={item.link}>
-                <Link to={item.link}>{item.text}</Link>
+              <li
+                className="text-3xl font-bold"
+                onClick={() => {
+                  handleMenu();
+                  scrollTo(item.link);
+                }}
+                key={item.link}
+              >
+                {item.text}
               </li>
             );
           })}
