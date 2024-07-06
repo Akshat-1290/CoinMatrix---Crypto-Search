@@ -10,7 +10,7 @@ export const floatConverter = (num)=>{
     let priceStr = num.toString();
     if (priceStr[0] === "-") {
       return (
-        <span className={`text-${size} text-red-600]`}>{num.toFixed(2)} %</span>
+        <span className={`text-${size} text-red-600`}>{num.toFixed(2)} %</span>
       );
     } else {
       return (
