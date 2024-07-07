@@ -12,7 +12,6 @@ export const Coins = () => {
   const { coinid } = useParams();
 
   useEffect(() => {
-    console.log(coinData , "coins.jsx");
     fetchCoin(coinid).then((value) => {
       if (value) {
         setCoinData(value);

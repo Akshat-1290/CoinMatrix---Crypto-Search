@@ -20,12 +20,13 @@ const router = createBrowserRouter([
         path: "/coin/:coinid",
         element: <Coins />,
       },
+      {
+        path : "*",
+        element : <NotFound/>
+      }
     ],
   },
-  {
-    path : "*",
-    element : <NotFound/>
-  }
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

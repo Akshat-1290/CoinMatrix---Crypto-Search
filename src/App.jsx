@@ -26,7 +26,7 @@ function App() {
     <>
       <Navbar />
       <main>
-        <CoinsContext.Provider value={{ data, setPagination, loading }}>
+        <CoinsContext.Provider value={{ data,  pagination, setPagination, loading }}>
           <Outlet />
         </CoinsContext.Provider>
       </main>
