@@ -8,9 +8,9 @@ export const HeroCoins = () => {
   const limitedCoins = data ? data.slice(0, 4) : null;
   return (
     <>
-     {loading && <Loader/>}
+      {loading && <Loader />}
       {!loading && (
-        <div className="hero-coins hidden w-full sm:grid grid-cols-2 md:grid-cols-4 justify-items-center gap-10 mt-4 xl:flex xl:justify-center xl:gap-28">
+        <div className="hero-coins w-full grid grid-cols-2 md:grid-cols-4 justify-items-center gap-10 mt-4 xl:flex xl:justify-center xl:gap-28">
           {limitedCoins.map((item) => {
             return (
               <Link

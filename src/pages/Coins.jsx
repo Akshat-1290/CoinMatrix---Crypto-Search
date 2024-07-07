@@ -61,7 +61,7 @@ export const Coins = () => {
             </div>
             <div className="mt-5 text-center">
               <p
-                className="px-7 overflow-y-auto h-[30rem] text-xl lg:h-[21.5rem]"
+                className="px-7 h-[30rem] text-xl lg:h-[21.5rem]"
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(
                     coinData.description.en.length > 10
