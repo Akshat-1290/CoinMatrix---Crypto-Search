@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { useEffect, useState } from "react";
 import { fetchCoinsData } from "./functions/getData";
@@ -7,6 +7,7 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState(1);
+  const navigate = useNavigate()
   useEffect(() => {
       fetchCoinsData(10, pagination).then((value) => {
         if (value) {
@@ -14,13 +15,13 @@ function App() {
           setLoading(false);
         }
         else{
-          alert("Error Fetching Data")
+          navigate("/notfound")
         }
       }).catch((error) => {
         console.log(error);
       });
 
-  }, [pagination]);
+  }, [pagination , navigate]);
 
   return (
     <>
