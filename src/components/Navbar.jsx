@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
+  const location = useLocation()
+
 
   const menuLink = [
     { text: "Hero", link: "#hero" },
@@ -55,7 +57,9 @@ export const Navbar = () => {
         >
           CoinMatrix
         </Link>
-        <ul className="desktop-menu hidden md:flex gap-5">
+
+        {location.pathname === "/" && (<>
+          <ul className="desktop-menu hidden md:flex gap-5">
           {menuLink.map((item) => {
             return (
               <li
@@ -100,7 +104,7 @@ export const Navbar = () => {
         </ul>
         <div className="ham-menu text-3xl md:hidden" onClick={handleMenu}>
           <i className="fa-solid fa-bars-staggered hamburger-menu hover-gradient transition-all"></i>
-        </div>
+        </div> </>)}
       </nav>
     </>
   );

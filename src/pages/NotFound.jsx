@@ -1,7 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const NotFound = () => {
-    const navigate = useNavigate()
   return (
     <>
       <section className="bg-gradient-purple text-slate-100 h-screen flex flex-col justify-center ">
@@ -16,12 +15,12 @@ export const NotFound = () => {
             <p className="mb-4 text-lg font-light">
               Sorry, we can t find that page. Api Is Limited You can try again later.
             </p>
-            <a
-              href="#"
-              className="inline-flex text-white bg-black hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  my-4" onClick={() => navigate("/")}
+            <Link
+              to={"/"}
+              className="inline-flex text-white bg-black hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  my-4"
             >
               Back to Homepage
-            </a>
+            </Link>
           </div>
         </div>
       </section>
