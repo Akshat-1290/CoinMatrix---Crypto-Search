@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 
 export const Hero = () => {
   const [screenSize, setScreenSize] = useState("");
-  useEffect(() => {
-    window.addEventListener("resize" , ()=>{
+const detectScreenSize = () => {
       window.innerWidth >=640 ? setScreenSize("large") : setScreenSize("small")
-    })
+}
+  useEffect(() => {
+detectScreenSize()
+    window.addEventListener("resize" , detectScreenSize)
   }, []);
   return (
     <>
@@ -16,7 +18,7 @@ export const Hero = () => {
           <h1 className="relative">
             <BigText text1="Track And Trade" text2="Cryptocurrencies" />
           </h1>
-          {screenSize && screenSize === "small" ? (
+          {screenSize === "small" ? (
             <button
               onClick={() => window.scrollTo({ top: 300, behavior: "smooth" })}
               className="scroll-to-market bg-gradient-purple w-2/3 h-14 rounded-full text-xl flex justify-center items-center gap-3"
