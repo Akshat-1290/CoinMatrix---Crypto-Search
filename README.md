@@ -1,8 +1,16 @@
-# React + Vite
+# Coin Matrix Crypto Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CoinMatrix allows users to see information about crypto currencies. The data is real and up to date, coingecko api is utilised in the website to get the data. Users can browse upto 45+ cryptocurrencies, containing their name , symbol , data , market cap and much more. The idea of this website is taken from [stefnDev](https://github.com/stefvndev)
 
-Currently, two official plugins are available:
+[Live Preview](https://coin-matrix-crypto-search.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built With
+- React
+- Tailwind CSS
+- Coingecko Api
+
+# Screenshots
+
+![coin-matrix-crypto-search vercel app_](https://github.com/Akshat-1290/CoinMatrix---Crypto-Search/assets/173776736/61654c98-6338-4a2d-955c-f66fcffe6482)
+![coin-matrix-crypto-search vercel app_ (1)](https://github.com/Akshat-1290/CoinMatrix---Crypto-Search/assets/173776736/d8bb7441-cedc-428e-8bf2-a9a548da7aea)
+
