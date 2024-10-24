@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { fetchCoinsData } from "./functions/getData";
 import { CoinsContext } from "./context/AppContext";
 function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(null); 
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState(1);
   const navigate = useNavigate()
